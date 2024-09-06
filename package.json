@@ -4,12 +4,8 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.108",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
@@ -20,7 +16,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write \"src/**/*.{css,js,jsx,ts,tsx}\"",
+    "lint": "eslint src",
+    "lint:fix": "npm run prettier && npm run lint"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +38,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/eslint__js": "^8.42.3",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.35.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "globals": "^15.9.0",
+    "prettier": "3.3.3",
+    "prettier-plugin-sort-imports": "^1.8.6",
+    "typescript-eslint": "^8.4.0"
   }
 }

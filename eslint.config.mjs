@@ -6,10 +6,9 @@ import pluginReact from "eslint-plugin-react";
 import eslintConfigPrettier from "eslint-config-prettier";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 
-
 export default [
-  {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
   {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     ignores: ["node_modules", "build", "*.css"],
     languageOptions: { globals: globals.browser },
     plugins: {

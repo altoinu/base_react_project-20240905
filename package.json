@@ -18,8 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"src/**/*.{css,js,jsx,ts,tsx}\"",
-    "lint": "eslint src",
-    "lint:fix": "npm run prettier && npm run lint"
+    "eslint": "eslint src",
+    "lint:fix": "npm-run-all prettier eslint"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +52,7 @@
     "eslint-plugin-react": "^7.35.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "globals": "^15.9.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "3.3.3",
     "prettier-plugin-sort-imports": "^1.8.6",
     "typescript-eslint": "^8.4.0"

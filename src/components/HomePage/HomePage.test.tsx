@@ -31,6 +31,33 @@ describe("<HomePage>", () => {
     expect(button2).toBeInTheDocument();
   });
 
+  it("should contain corresponding clicked button response in body when either button is clicked", async () => {
+    const user = userEvent.setup();
+
+    const handleButtonClick = jest.fn();
+    render(
+      <HomePage
+        personName="John"
+        secondPersonName="Doe"
+        onButtonClick={handleButtonClick}
+      />,
+    );
+    const button1 = screen.getByRole("button", { name: "Click Me!" });
+    const button2 = screen.getByRole("button", { name: "Click Me Too!" });
+
+    await user.click(button1);
+
+    expect(
+      screen.getByText("clicked button response: First button clicked"),
+    ).toBeInTheDocument();
+
+    await user.click(button2);
+
+    expect(
+      screen.getByText("clicked button response: Second button clicked"),
+    ).toBeInTheDocument();
+  });
+
   it("should call onButtonClick with 'First button clicked' when first button is clicked", async () => {
     const user = userEvent.setup();
 

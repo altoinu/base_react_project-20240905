@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type HomePageProps = {
   personName: string;
   secondPersonName?: string;
@@ -10,7 +12,18 @@ type HomePageProps = {
 };
 
 const HomePage = ({ personName, onButtonClick, ...props }: HomePageProps) => {
-  const handleButtonClick = (response: string) => {
+  const [clickedButtonResponse, setClickedButtonResponse] = useState<string>();
+
+  const handleButtonClick = (buttonNum: number) => {
+    const response =
+      buttonNum === 1
+        ? "First button clicked"
+        : buttonNum === 2
+          ? "Second button clicked"
+          : "something else clicked";
+
+    setClickedButtonResponse(response);
+
     onButtonClick?.(response);
   };
 
@@ -20,21 +33,22 @@ const HomePage = ({ personName, onButtonClick, ...props }: HomePageProps) => {
         Hello {personName}
         {props.secondPersonName ? ` and ${props.secondPersonName}` : ""}!
       </h1>
-      {onButtonClick ? (
-        <>
-          <button
-            type="button"
-            onClick={() => handleButtonClick("First button clicked")}
-          >
-            Click Me!
-          </button>
-          <button
-            type="button"
-            onClick={() => handleButtonClick("Second button clicked")}
-          >
-            Click Me Too!
-          </button>
-        </>
+      <div>
+        {onButtonClick ? (
+          <>
+            <button type="button" onClick={() => handleButtonClick(1)}>
+              Click Me!
+            </button>
+            <button type="button" onClick={() => handleButtonClick(2)}>
+              Click Me Too!
+            </button>
+          </>
+        ) : (
+          ""
+        )}
+      </div>
+      {clickedButtonResponse ? (
+        <p>clicked button response: {clickedButtonResponse}</p>
       ) : (
         ""
       )}

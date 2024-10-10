@@ -1,3 +1,6 @@
+# base_react_project-20240905
+Sample basic React project setup with some dev dependencies
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

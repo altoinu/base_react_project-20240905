@@ -1,7 +1,10 @@
 import "./App.css";
+import HomePage from "./components/HomePage";
 import logo from "./logo.svg";
 
 function App() {
+  const handleButtonClick = (response: string) => alert(response);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +20,12 @@ function App() {
         >
           Learn React
         </a>
+        <HomePage personName="Kaoru" />
+        <HomePage
+          personName="John"
+          secondPersonName="Doe"
+          onButtonClick={handleButtonClick}
+        />
       </header>
     </div>
   );

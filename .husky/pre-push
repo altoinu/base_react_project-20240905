@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# run all unit tests
+CI=true npm run test --watchAll=false
+exit 1

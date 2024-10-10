@@ -16,7 +16,7 @@ export default {
   trailingComma: "all",
   useTabs: false,
   // prettier-plugin-sort-imports options
-  sortingMethod: 'lineLength',
-	plugins: ['./node_modules/prettier-plugin-sort-imports/dist/index.js'],
+  sortingMethod: "alphabetical",
+  plugins: ["./node_modules/prettier-plugin-sort-imports/dist/index.js"],
 };
 //  trailingComma: "es5",

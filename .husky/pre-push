@@ -3,4 +3,3 @@
 
 # run all unit tests
 CI=true npm run test --watchAll=false
-exit 1

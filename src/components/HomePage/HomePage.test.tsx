@@ -3,6 +3,18 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 describe("<HomePage>", () => {
+  it("should render", () => {
+    const { container: HomePageContainer } = render(
+      <HomePage
+        personName="John"
+        secondPersonName="Doe"
+        onButtonClick={jest.fn}
+      />,
+    );
+
+    expect(HomePageContainer).toMatchSnapshot();
+  });
+
   it("should have person's name", () => {
     render(<HomePage personName="Kaoru" />);
     const heading = screen.getByRole("heading");
@@ -16,12 +28,11 @@ describe("<HomePage>", () => {
   });
 
   it("should have two buttons when onButtonClick is set", () => {
-    const handleButtonClick = jest.fn();
     render(
       <HomePage
         personName="John"
         secondPersonName="Doe"
-        onButtonClick={handleButtonClick}
+        onButtonClick={jest.fn}
       />,
     );
 

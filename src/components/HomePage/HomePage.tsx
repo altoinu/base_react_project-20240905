@@ -6,9 +6,9 @@ type HomePageProps = {
   /**
    * Callback fired when the button is clicked.
    *
-   * @param {string} response response from the button click.
+   * @param {Number} buttonNum Button number clicked.
    */
-  onButtonClick?: (response: string) => void;
+  onButtonClick?: (buttonNum: number) => void;
 };
 
 const HomePage = ({ personName, onButtonClick, ...props }: HomePageProps) => {
@@ -24,7 +24,7 @@ const HomePage = ({ personName, onButtonClick, ...props }: HomePageProps) => {
 
     setClickedButtonResponse(response);
 
-    onButtonClick?.(response);
+    onButtonClick?.(buttonNum);
   };
 
   return (

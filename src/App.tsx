@@ -3,7 +3,8 @@ import HomePage from "./components/HomePage";
 import logo from "./logo.svg";
 
 function App() {
-  const handleButtonClick = (response: string) => alert(response);
+  const handleButtonClick = (buttonNum: number) =>
+    alert("button number clicked:" + buttonNum);
 
   return (
     <div className="App">

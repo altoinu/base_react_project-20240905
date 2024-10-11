@@ -16,7 +16,7 @@ describe("<HomePage>", () => {
   });
 
   it("should have two buttons when onButtonClick is set", () => {
-    const handleButtonClick = (response: string) => console.log(response);
+    const handleButtonClick = jest.fn();
     render(
       <HomePage
         personName="John"
@@ -73,7 +73,7 @@ describe("<HomePage>", () => {
 
     await user.click(button1);
 
-    expect(handleButtonClick).toHaveBeenCalledWith("First button clicked");
+    expect(handleButtonClick).toHaveBeenCalledWith(1);
   });
 
   it("should call onButtonClick with 'Second button clicked' when first button is clicked", async () => {
@@ -91,6 +91,6 @@ describe("<HomePage>", () => {
 
     await user.click(button2);
 
-    expect(handleButtonClick).toHaveBeenCalledWith("Second button clicked");
+    expect(handleButtonClick).toHaveBeenCalledWith(2);
   });
 });

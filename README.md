@@ -1,3 +1,12 @@
+## \*\*\*This project is deprecated.\*\*\*
+
+Because [Create React App](https://github.com/facebook/create-react-app), the tool originally used to set up this project, is now deprecated, this project has been deprecated as well. Following are the newer React project set up using the latest recommended frameworks/tools.
+
+- Next.js: https://github.com/altoinu/base_react_nextjs_project-20241220
+- Vite: https://github.com/altoinu/base_react_vite_project-20250128
+
+For more info: https://react.dev/learn/start-a-new-react-project
+
 # base_react_project-20240905
 Sample basic React project setup with some dev dependencies
 
